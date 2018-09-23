@@ -1,0 +1,42 @@
+---
+layout: post
+title: test
+date: 
+type: post
+parent_id: '0'
+published: false
+password: ''
+status: draft
+categories: []
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: fleck62992
+  email: fleck62992@gmail.com
+  display_name: Jon Affleck
+  first_name: Jon
+  last_name: Affleck
+---
+<table id="records_table" border="1">
+<tbody>
+<tr>
+<th>Session</th>
+<th>Last Action Date</th>
+<th>Last Action</th>
+</tr>
+</tbody>
+</table>
+<p>var billList = ["HB 1538", "HR 63", "SB 76", "SR 119"];</p>
+<p>$.each(billList, function( index, billNumber ) {<br />
+$.ajax({<br />
+url: 'http://openstates.org/api/v1//bills/pa/2015-2016/' + billNumber + '/?apikey=8f1ecdd76b504123b95cfb857504ae55',<br />
+success: function (response) {<br />
+var trHTML = '';<br />
+trHTML += '<br />
+' + response.session + '' + response.actions[0].date + '' + response.actions[0].action + '</p>
+<p>';<br />
+$('#records_table').append(trHTML);<br />
+}<br />
+});<br />
+});</p>
